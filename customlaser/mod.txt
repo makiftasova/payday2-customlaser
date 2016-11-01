@@ -1,0 +1,12 @@
+{
+    "name" : "customlaser",
+    "description" : "Customise your laser color",
+    "author" : "makiftasova"
+    "contact" : "",
+    "version" : "1.0",
+    "hooks" : [   
+        {"hook_id" : "lib/units/weapons/weaponlaser", "script_path" : "customlaser.lua" },
+        {"hook_id" : "lib/units/weapons/raycastweaponbase", "script_path" : "customlaser.lua" }
+	]
+	
+}
