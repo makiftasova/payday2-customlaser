@@ -47,7 +47,9 @@ end
 Hooks:RegisterHook("WeaponLaserUpdate")
 function WeaponLaser.update(self, unit, t, dt)
     self.orig.update(self, unit, t, dt)
-    self:set_color_by_theme("custom_player_laser")
+    if not self._is_npc then
+        self:set_color_by_theme("custom_player_laser")
+    end
     Hooks:Call("WeaponLaserUpdate", self, unit, t, dt)
 end
 
@@ -60,7 +62,6 @@ end
 Hooks:RegisterHook("WeaponLaserPostSetColorByTheme")
 function WeaponLaser.set_color_by_theme(self, theme)
     self.orig.set_color_by_theme(self, theme)
-    log("laser_set_theme: theme:" )--.. tostring(theme))
     Hooks:Call("WeaponLaserPostSetColorByTheme", self, theme)
 end
 
